@@ -62,18 +62,30 @@ function showRestaurants(cuisineKey) {
   goToStep('step-restaurant');
 }
 
-// Handle final choice and send to Formspree
 function selectRestaurant(placeName) {
+  // Update the screen UI instantly for her
   document.getElementById('summary-text').innerText = `${placeName}`;
   goToStep('step-thanks');
 
-  // Replace with your phone number including country code (e.g., 447123456789 for UK)
-  const myPhoneNumber = "44XXXXXXXXXX"; 
-  
-  const message = encodeURIComponent(`Hey! I picked ${placeName} (${selectedCuisine.replace('_', ' ')}) for tonight! 🥂✨`);
-
-  // Redirects her to WhatsApp after 1.5 seconds
-  setTimeout(() => {
-    window.location.href = `https://wa.me/${myPhoneNumber}?text=${message}`;
-  }, 1500);
+  // Send her selection secretly to your email via Formspree
+  fetch(FORMSPREE_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    body: JSON.stringify({
+      cuisine: selectedCuisine.replace('_', ' '),
+      restaurant: placeName,
+      date_submitted: new Date().toLocaleString()
+    })
+  })
+  .then(response => {
+    if (response.ok) {
+      console.log("Formspree email delivered!");
+    } else {
+      console.error("Formspree submission failed.");
+    }
+  })
+  .catch(error => console.error("Error:", error));
 }

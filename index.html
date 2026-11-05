@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>U & Me wink wink? 🍵</title>
+
+  <!-- Cute & Aesthetic Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Plus+Jakarta+Sans:wght@600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Floating Green Glow Aesthetic Background -->
+  <div class="bg-glow"></div>
+
+  <div class="card">
+    
+    <!-- Step 1: Initial Question -->
+    <section id="step-1" class="step active">
+      <div class="badge">hi kak zizi \(^_^)/</div>
+      <h1> akak... nak keluar? >_< </h1>
+      <p class="subtext"> ye, memang takde option taknak </p>
+      <div class="btn-group">
+        <button class="btn-primary" onclick="goToStep('step-date')">yes</button>
+        <button class="btn-secondary" onclick="goToStep('step-no-1')">bolehla</button>
+      </div>
+    </section>
+
+    <!-- Step 1 Tease -->
+    <section id="step-no-1" class="step">
+      <div class="badge alert">WRONG ANSWER 🚨</div>
+      <h1>ala jom laaaaaaaaaaaa </h1>
+      <p class="subtext">saya belanja :)) </p>
+      <div class="btn-group">
+        <button class="btn-primary" onclick="goToStep('step-date')">yela yela jom</button>
+        <button class="btn-secondary" onclick="goToStep('step-1')">start over</button>
+      </div>
+    </section>
+
+    <!-- Step 2: The Date Question (WITH YOUR PHOTO) -->
+    <section id="step-date" class="step">
+      <div class="photo-wrapper">
+        <img src="iklil.jpeg" alt="My Photo" class="profile-pic" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80'">
+    <span class="photo-badge">👉👈</span>
+        <span class="photo-badge">👉👈</span>
+      </div>
+      <h1>dengan.... saya je la tapi</h1>
+      <div class="btn-group relative-container">
+        <button id="yes-date-btn" class="btn-primary" onclick="goToStep('step-cuisine')">MESTILA NAKKK</button>
+        <button id="runaway-btn" class="btn-runaway">tanakkk</button>
+      </div>
+    </section>
+
+    <!-- Step 3: Select Cuisine -->
+    <section id="step-cuisine" class="step">
+      <div class="badge">saya nak belanja tauuu.. the choice is yours</div>
+      <h1>akak nak makan apee</h1>
+      <div class="grid-buttons">
+        <button class="btn-grid" onclick="showRestaurants('japanese')"></span> Japanese</button>
+        <button class="btn-grid" onclick="showRestaurants('chinese')"></span> Chinese</button>
+        <button class="btn-grid" onclick="showRestaurants('mexican')"></span> Mexican</button>
+        <button class="btn-grid" onclick="showRestaurants('korean')"></span> Korean</button>
+        <button class="btn-grid" onclick="showRestaurants('malay')"></span> Malay</button>
+        <button class="btn-grid" onclick="showRestaurants('vietnamese')"></span> Viet</button>
+        <button class="btn-grid" onclick="showRestaurants('middle_eastern')"></span> Mid Eastern</button>
+        <button class="btn-grid" onclick="showRestaurants('fast_food')"></span> Fast Food</button>
+      </div>
+    </section>
+
+    <!-- Step 4: Select Restaurant -->
+    <section id="step-restaurant" class="step">
+      <div class="badge">all halal</div>
+      <h1 id="cuisine-title">Pick a spot:</h1>
+      <div id="restaurant-list" class="grid-buttons">
+        <!-- Dynamically populated by JS -->
+      </div>
+      <button class="back-btn" onclick="goToStep('step-cuisine')">← back</button>
+    </section>
+
+    <!-- Step 5: Thank You Confirmation -->
+    <section id="step-thanks" class="step">
+      <div class="badge success">IT'S A DATE </div>
+      <h1>SAY LESS!</h1>
+      <div class="confirmation-box">
+        <p id="summary-text"></p>
+      </div>
+      <p class="subtext">I've received your response! See you this evening </p>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

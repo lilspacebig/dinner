@@ -1,0 +1,249 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Elegant Font Setup */
+body, button {
+  font-family: 'Playfair Display', 'Cormorant Garamond', 'Georgia', serif;
+}
+
+/* Bright Sage/Eucalyptus Canvas with Painting Background */
+body {
+  background-color: #d8e2dc;
+  /* Classic Green Fine Art Painting Background */
+  background-image: 
+    linear-gradient(to bottom, rgba(232, 237, 231, 0.45), rgba(186, 201, 184, 0.65)),
+    url("https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1600&auto=format&fit=crop&q=80");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+/* Card - Seamlessly Faded into the Background */
+.card {
+  background: rgba(244, 247, 244, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 3rem 2.2rem;
+  border-radius: 24px;
+  box-shadow: 
+    0 20px 40px rgba(45, 62, 48, 0.12),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+  text-align: center;
+  max-width: 440px;
+  width: 100%;
+  position: relative;
+  color: #2c3e2e;
+}
+
+/* Elegant Subdued Badges */
+.badge {
+  display: inline-block;
+  background: rgba(135, 158, 137, 0.2);
+  color: #3e5240;
+  border: 1px solid rgba(135, 158, 137, 0.4);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  padding: 5px 16px;
+  border-radius: 30px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.badge.alert {
+  background: rgba(184, 153, 135, 0.2);
+  color: #634737;
+  border-color: rgba(184, 153, 135, 0.4);
+}
+
+.badge.success {
+  background: rgba(157, 180, 152, 0.3);
+  color: #273829;
+  border-color: rgba(157, 180, 152, 0.6);
+}
+
+h1 {
+  font-size: 1.85rem;
+  font-weight: 500;
+  letter-spacing: -0.3px;
+  margin: 10px 0 14px 0;
+  color: #1e2c1f;
+  line-height: 1.3;
+}
+
+.subtext {
+  color: #4a5d4c;
+  font-size: 0.95rem;
+  font-style: italic;
+  margin-bottom: 24px;
+}
+
+/* Step Animations */
+.step {
+  display: none;
+}
+
+.step.active {
+  display: block;
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Subtle Profile Frame */
+.photo-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.profile-pic {
+  width: 135px;
+  height: 135px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 20px rgba(35, 51, 37, 0.15);
+}
+
+.photo-badge {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  background: #f4f7f4;
+  border: 1px solid #a3b19b;
+  border-radius: 50%;
+  padding: 4px;
+  font-size: 1rem;
+}
+
+/* Button Layout & Refined Styling */
+.btn-group {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+button {
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  border: none;
+  border-radius: 12px;
+  padding: 13px 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Primary Sage Button */
+.btn-primary {
+  background: #4a5d4c;
+  color: #f4f7f4;
+  font-weight: 500;
+  box-shadow: 0 4px 14px rgba(74, 93, 76, 0.25);
+  width: 100%;
+}
+
+.btn-primary:hover {
+  background: #394a3b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(57, 74, 59, 0.35);
+}
+
+/* Secondary Muted Button */
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.6);
+  color: #394a3b;
+  border: 1px solid rgba(118, 138, 120, 0.4);
+  width: 100%;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.9);
+  color: #1e2c1f;
+}
+
+.grid-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 1rem;
+}
+
+/* Grid Buttons - Light Soft Olive */
+.btn-grid {
+  background: rgba(255, 255, 255, 0.55);
+  color: #2c3e2e;
+  border: 1px solid rgba(135, 158, 137, 0.35);
+  padding: 14px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  border-radius: 12px;
+}
+
+.btn-grid:hover {
+  background: #4a5d4c;
+  color: #ffffff;
+  border-color: #4a5d4c;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(74, 93, 76, 0.2);
+}
+
+.relative-container {
+  position: relative;
+  min-height: 60px;
+}
+
+/* Runaway Button */
+.btn-runaway {
+  position: absolute;
+  background: #394a3b;
+  color: #ffffff;
+  border: 1px solid rgba(135, 158, 137, 0.3);
+  padding: 13px 24px;
+  border-radius: 12px;
+  transition: all 0.12s ease;
+}
+
+/* Back Link Button */
+.back-btn {
+  margin-top: 20px;
+  background: transparent;
+  color: #4a5d4c;
+  font-size: 0.85rem;
+  padding: 6px;
+  font-style: italic;
+}
+
+.back-btn:hover {
+  color: #1e2c1f;
+  text-decoration: underline;
+}
+
+/* Final Confirmation Box */
+.confirmation-box {
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid #879e89;
+  padding: 16px;
+  border-radius: 14px;
+  margin: 18px 0;
+  color: #2c3e2e;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
